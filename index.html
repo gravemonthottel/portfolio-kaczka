@@ -1,0 +1,5286 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BŁ — Portfolio Artystyczne</title>
+
+    <meta
+        name="description"
+        content="Portfolio autorskich obrazów, postaci i światów."
+    >
+
+    <!-- IKONA STRONY -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="obrazy/kaczka.jpg"
+    >
+
+
+    <style>
+
+        /* =========================================================
+           KOLORY I USTAWIENIA
+        ========================================================= */
+
+        :root {
+
+            --cream: #f4f0e7;
+            --cream-light: #fbf9f4;
+            --cream-dark: #e7e0d4;
+
+            --black: #171716;
+            --black-soft: #222220;
+            --black-light: #2b2b28;
+
+            --text: #292825;
+            --text-light: #747069;
+
+            --gold: #b6985c;
+            --gold-light: #d4c18e;
+
+            --border: rgba(20,20,18,0.13);
+
+            --shadow:
+                0 25px 70px
+                rgba(0,0,0,0.12);
+
+            --radius: 18px;
+
+            --page-width: 1320px;
+
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: var(--cream);
+
+            color: var(--text);
+
+            line-height: 1.6;
+
+            overflow-x: hidden;
+
+        }
+
+
+        img {
+
+            display: block;
+            max-width: 100%;
+
+        }
+
+
+        a {
+
+            text-decoration: none;
+            color: inherit;
+
+        }
+
+
+        button {
+
+            font: inherit;
+
+        }
+
+
+        section {
+
+            scroll-margin-top: 100px;
+
+        }
+
+
+
+        /* =========================================================
+           NAGŁÓWEK
+        ========================================================= */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                rgba(248,245,238,0.94);
+
+            backdrop-filter:
+                blur(16px);
+
+            border-bottom:
+                1px solid var(--border);
+
+        }
+
+
+        .navbar {
+
+            max-width: var(--page-width);
+
+            min-height: 88px;
+
+            margin: auto;
+
+            padding:
+                0 28px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content:
+                space-between;
+
+            gap: 30px;
+
+        }
+
+
+
+        /* =========================================================
+           LOGO W MENU
+        ========================================================= */
+
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+
+        }
+
+
+        .header-logo {
+
+            width: 70px;
+
+            height: 70px;
+
+            object-fit: contain;
+
+            border-radius: 12px;
+
+            transition:
+                transform .3s ease;
+
+        }
+
+
+        .brand:hover
+        .header-logo {
+
+            transform:
+                scale(1.05);
+
+        }
+
+
+        .brand-text {
+
+            display: flex;
+
+            flex-direction: column;
+
+            line-height: 1.1;
+
+        }
+
+
+        .brand-title {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 21px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .brand-subtitle {
+
+            margin-top: 6px;
+
+            color: #77736d;
+
+            font-size: 8px;
+
+            font-weight: 600;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+        }
+
+
+
+        /* =========================================================
+           MENU
+        ========================================================= */
+
+        nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 36px;
+
+        }
+
+
+        nav a {
+
+            position: relative;
+
+            color: #484640;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: 1.6px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        nav a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -9px;
+
+            width: 0;
+
+            height: 1px;
+
+            background:
+                var(--gold);
+
+            transition:
+                width .25s ease;
+
+        }
+
+
+        nav a:hover::after {
+
+            width: 100%;
+
+        }
+
+
+        nav a:hover {
+
+            color: #111;
+
+        }
+
+
+
+        /* =========================================================
+           MENU MOBILNE
+        ========================================================= */
+
+        .menu-button {
+
+            display: none;
+
+            width: 45px;
+
+            height: 45px;
+
+            border: 0;
+
+            background: transparent;
+
+            cursor: pointer;
+
+            color: #171716;
+
+            font-size: 25px;
+
+        }
+
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+
+            max-width:
+                var(--page-width);
+
+            min-height:
+                calc(100vh - 88px);
+
+            margin: auto;
+
+            padding:
+                70px 28px
+                90px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr;
+
+            gap: 0;
+
+            align-items: center;
+
+        }
+
+
+        .hero-small {
+
+            margin-bottom:
+                18px;
+
+            color:
+                var(--gold);
+
+            font-size:
+                10px;
+
+            font-weight:
+                bold;
+
+            letter-spacing:
+                4px;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        .hero h1 {
+
+            max-width:
+                750px;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(
+                    52px,
+                    6vw,
+                    94px
+                );
+
+            font-weight:
+                400;
+
+            line-height:
+                .98;
+
+            letter-spacing:
+                -3px;
+
+        }
+
+
+        .hero h1 span {
+
+            color:
+                var(--gold);
+
+            font-style:
+                italic;
+
+        }
+
+
+        .hero-description {
+
+            max-width:
+                600px;
+
+            margin-top:
+                30px;
+
+            color:
+                #69655f;
+
+            font-size:
+                17px;
+
+            line-height:
+                1.9;
+
+        }
+
+
+        .hero-buttons {
+
+            margin-top:
+                38px;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 13px;
+
+        }
+
+
+        .button {
+
+            min-width:
+                180px;
+
+            padding:
+                15px 26px;
+
+            border-radius:
+                50px;
+
+            text-align:
+                center;
+
+            font-size:
+                11px;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                1.5px;
+
+            text-transform:
+                uppercase;
+
+            transition:
+                .25s ease;
+
+        }
+
+
+        .button-dark {
+
+            background:
+                var(--black);
+
+            color:
+                white;
+
+        }
+
+
+        .button-dark:hover {
+
+            background:
+                #000;
+
+            transform:
+                translateY(-3px);
+
+        }
+
+
+        .button-light {
+
+            border:
+                1px solid
+                var(--border);
+
+            background:
+                rgba(255,255,255,.35);
+
+        }
+
+
+        .button-light:hover {
+
+            background:
+                white;
+
+            transform:
+                translateY(-3px);
+
+        }
+
+
+        /* =========================================================
+           OGÓLNE SEKCJE
+        ========================================================= */
+
+        .section {
+
+            max-width:
+                var(--page-width);
+
+            margin: auto;
+
+            padding:
+                110px 28px;
+
+        }
+
+
+        .section-head {
+
+            margin-bottom:
+                50px;
+
+            display: flex;
+
+            align-items:
+                flex-end;
+
+            justify-content:
+                space-between;
+
+            gap: 35px;
+
+        }
+
+
+        .eyebrow {
+
+            margin-bottom:
+                13px;
+
+            color:
+                var(--gold);
+
+            font-size:
+                10px;
+
+            font-weight:
+                bold;
+
+            letter-spacing:
+                4px;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        .section-title {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(
+                    40px,
+                    5vw,
+                    66px
+                );
+
+            font-weight:
+                400;
+
+            letter-spacing:
+                -2px;
+
+        }
+
+
+        .section-description {
+
+            max-width:
+                470px;
+
+            color:
+                var(--text-light);
+
+            font-size:
+                14px;
+
+            line-height:
+                1.9;
+
+        }
+
+
+
+        /* =========================================================
+           GALERIA
+        ========================================================= */
+
+        .gallery-section {
+
+            background:
+                var(--black);
+
+            color:
+                white;
+
+        }
+
+
+        .gallery-section
+        .section-description {
+
+            color:
+                #98958e;
+
+        }
+
+
+
+        /* =========================================================
+           FILTRY
+        ========================================================= */
+
+        .filter-buttons {
+
+            margin-bottom:
+                40px;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+        }
+
+
+        .filter-btn {
+
+            padding:
+                10px 19px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.13);
+
+            border-radius:
+                30px;
+
+            background:
+                transparent;
+
+            color:
+                #aaa7a0;
+
+            cursor:
+                pointer;
+
+            font-size:
+                10px;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                1.4px;
+
+            text-transform:
+                uppercase;
+
+            transition:
+                .25s;
+
+        }
+
+
+        .filter-btn:hover,
+        .filter-btn.active {
+
+            border-color:
+                var(--gold);
+
+            background:
+                var(--gold);
+
+            color:
+                #151514;
+
+        }
+
+
+
+        /* =========================================================
+           SIATKA GALERII
+        ========================================================= */
+
+        .gallery {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    minmax(0,1fr)
+                );
+
+            gap:
+                34px 26px;
+
+        }
+
+
+        .art-card {
+
+            cursor: pointer;
+
+            transition:
+                transform .35s ease;
+
+        }
+
+
+        .art-card:hover {
+
+            transform:
+                translateY(-7px);
+
+        }
+
+
+        .art-image {
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                #282826;
+
+        }
+
+
+        .art-image img {
+
+            width: 100%;
+
+            height: 440px;
+
+            object-fit:
+                cover;
+
+            transition:
+                transform .65s ease,
+                filter .4s ease;
+
+        }
+
+
+        .art-card:hover
+        .art-image img {
+
+            transform:
+                scale(1.04);
+
+            filter:
+                brightness(.8);
+
+        }
+
+
+        .art-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            display: grid;
+
+            place-items:
+                center;
+
+            opacity: 0;
+
+            background:
+                rgba(0,0,0,.1);
+
+            transition:
+                .3s;
+
+        }
+
+
+        .art-card:hover
+        .art-overlay {
+
+            opacity: 1;
+
+            background:
+                rgba(0,0,0,.22);
+
+        }
+
+
+        .view-button {
+
+            width: 68px;
+
+            height: 68px;
+
+            display: grid;
+
+            place-items:
+                center;
+
+            border:
+                1px solid
+                rgba(255,255,255,.7);
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(0,0,0,.18);
+
+            backdrop-filter:
+                blur(8px);
+
+            color:
+                white;
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                27px;
+
+        }
+
+
+        .art-info {
+
+            padding-top:
+                17px;
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            gap: 20px;
+
+        }
+
+
+        .art-title {
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                22px;
+
+            font-weight:
+                400;
+
+        }
+
+
+        .art-category {
+
+            margin-top: 4px;
+
+            color:
+                #7e7b75;
+
+            font-size:
+                9px;
+
+            letter-spacing:
+                2px;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        .art-number {
+
+            padding-top:
+                5px;
+
+            color:
+                var(--gold);
+
+            font-family:
+                Georgia,
+                serif;
+
+        }
+
+
+
+        /* =========================================================
+           O MNIE
+        ========================================================= */
+
+        .about {
+
+            display: grid;
+
+            grid-template-columns:
+                .9fr 1.1fr;
+
+            gap: 85px;
+
+            align-items:
+                center;
+
+        }
+
+
+        .about-logo-area {
+
+            position: relative;
+
+            min-height: 550px;
+
+            display: grid;
+
+            place-items:
+                center;
+
+            overflow: hidden;
+
+            background:
+                var(--black);
+
+        }
+
+
+        .about-logo-area::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 390px;
+
+            height: 390px;
+
+            border:
+                1px solid
+                rgba(182,152,92,.3);
+
+            border-radius:
+                50%;
+
+        }
+
+
+        .about-logo-area::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 470px;
+
+            height: 470px;
+
+            border:
+                1px solid
+                rgba(182,152,92,.09);
+
+            border-radius:
+                50%;
+
+        }
+
+
+        .about-logo-card {
+
+            position: relative;
+
+            z-index: 3;
+
+            width: 300px;
+
+            padding: 25px;
+
+            background: white;
+
+            border-radius:
+                20px;
+
+            box-shadow:
+                0 30px 80px
+                rgba(0,0,0,.45);
+
+            transform:
+                rotate(-2deg);
+
+            transition:
+                transform .35s ease;
+
+        }
+
+
+        .about-logo-card:hover {
+
+            transform:
+                rotate(0deg)
+                scale(1.03);
+
+        }
+
+
+        .about-logo {
+
+            width: 100%;
+
+            height: auto;
+
+            object-fit:
+                contain;
+
+        }
+
+
+        .about-text h2 {
+
+            max-width:
+                700px;
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(
+                    40px,
+                    4.5vw,
+                    62px
+                );
+
+            font-weight:
+                400;
+
+            line-height:
+                1.1;
+
+            letter-spacing:
+                -1.5px;
+
+        }
+
+
+        .about-text h2 em {
+
+            color:
+                var(--gold);
+
+            font-weight:
+                400;
+
+        }
+
+
+        .about-text p {
+
+            max-width:
+                650px;
+
+            margin-top:
+                27px;
+
+            color:
+                #68645d;
+
+            line-height:
+                1.95;
+
+        }
+
+
+        .signature {
+
+            margin-top:
+                35px;
+
+            color:
+                var(--gold);
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                26px;
+
+            font-style:
+                italic;
+
+        }
+
+
+
+        /* =========================================================
+           CYTAT
+        ========================================================= */
+
+        .quote-section {
+
+            padding:
+                95px 28px;
+
+            background:
+                #dfd6c7;
+
+            text-align:
+                center;
+
+        }
+
+
+        .quote {
+
+            max-width:
+                900px;
+
+            margin: auto;
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(
+                    28px,
+                    4vw,
+                    48px
+                );
+
+            font-weight:
+                400;
+
+            line-height:
+                1.35;
+
+        }
+
+
+        .quote span {
+
+            color:
+                var(--gold);
+
+            font-style:
+                italic;
+
+        }
+
+
+
+        /* =========================================================
+           KONTAKT
+        ========================================================= */
+
+        .contact-section {
+
+            background:
+                var(--cream-dark);
+
+        }
+
+
+        .contact-box {
+
+            max-width:
+                var(--page-width);
+
+            margin: auto;
+
+            padding:
+                110px 28px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 90px;
+
+        }
+
+
+        .contact-title {
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(
+                    44px,
+                    5vw,
+                    72px
+                );
+
+            font-weight:
+                400;
+
+            line-height:
+                1.05;
+
+        }
+
+
+        .contact-title span {
+
+            color:
+                var(--gold);
+
+            font-style:
+                italic;
+
+        }
+
+
+        .contact-info {
+
+            display: flex;
+
+            flex-direction:
+                column;
+
+            justify-content:
+                center;
+
+        }
+
+
+        .contact-row {
+
+            padding:
+                19px 0;
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            gap: 30px;
+
+            border-bottom:
+                1px solid
+                rgba(0,0,0,.12);
+
+        }
+
+
+        .contact-label {
+
+            color:
+                #817c73;
+
+            font-size:
+                9px;
+
+            font-weight:
+                bold;
+
+            letter-spacing:
+                2px;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        .contact-value {
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                17px;
+
+        }
+
+
+        .contact-value a {
+            transition: color .2s ease;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-value a:hover {
+            color: var(--gold);
+        }
+
+
+
+        /* =========================================================
+           STOPKA
+        ========================================================= */
+
+        footer {
+
+            padding:
+                32px 28px;
+
+            background:
+                #111110;
+
+            color:
+                #807d76;
+
+        }
+
+
+        .footer {
+
+            max-width:
+                var(--page-width);
+
+            margin: auto;
+
+            display: flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap: 30px;
+
+        }
+
+
+        .footer-brand {
+
+            display: flex;
+
+            align-items:
+                center;
+
+            gap: 13px;
+
+        }
+
+
+        .footer-logo {
+
+            width: 52px;
+
+            height: 52px;
+
+            padding: 3px;
+
+            object-fit:
+                contain;
+
+            background: white;
+
+            border-radius:
+                8px;
+
+        }
+
+
+        .footer-title {
+
+            color:
+                #ddd8ce;
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                17px;
+
+        }
+
+
+        .copyright {
+
+            font-size:
+                9px;
+
+            letter-spacing:
+                1.5px;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+
+        /* =========================================================
+           MODAL
+        ========================================================= */
+
+        .modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 3000;
+
+            display: none;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                30px;
+
+            background:
+                rgba(7,7,7,.96);
+
+            backdrop-filter:
+                blur(14px);
+
+        }
+
+
+        .modal.active {
+
+            display: flex;
+
+        }
+
+
+        .modal-content {
+
+            max-width:
+                1100px;
+
+            max-height:
+                92vh;
+
+            display: flex;
+
+            flex-direction:
+                column;
+
+            align-items:
+                center;
+
+        }
+
+
+        .modal-image {
+
+            max-width: 100%;
+
+            max-height:
+                78vh;
+
+            object-fit:
+                contain;
+
+            box-shadow:
+                0 30px 90px
+                rgba(0,0,0,.5);
+
+        }
+
+
+        .modal-caption {
+
+            margin-top:
+                20px;
+
+            text-align:
+                center;
+
+            color: white;
+
+        }
+
+
+        .modal-caption h3 {
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                25px;
+
+            font-weight:
+                400;
+
+        }
+
+
+        .modal-caption p {
+
+            margin-top:
+                5px;
+
+            color:
+                #918e87;
+
+            font-size:
+                9px;
+
+            letter-spacing:
+                2px;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        .modal-close {
+
+            position: absolute;
+
+            top: 24px;
+
+            right: 28px;
+
+            width: 50px;
+
+            height: 50px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.25);
+
+            border-radius:
+                50%;
+
+            background:
+                transparent;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size:
+                26px;
+
+            transition:
+                .25s;
+
+        }
+
+
+        .modal-close:hover {
+
+            background:
+                white;
+
+            color:
+                black;
+
+        }
+
+
+
+        /* =========================================================
+           GRAVEMONT HOTTEL — OBRAZY DOSTĘPNE DO KUPIENIA
+        ========================================================= */
+
+        .sale-section {
+            background: var(--cream-light);
+        }
+
+        .sale-layout {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 34px;
+            align-items: start;
+            width: 100%;
+        }
+
+
+        .location-card {
+            grid-column: 1;
+            position: static;
+            min-width: 0;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            background: #fff;
+            box-shadow: var(--shadow);
+        }
+
+        .location-copy {
+            padding: 28px;
+        }
+
+        .location-copy h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(28px, 3vw, 38px);
+            font-weight: 400;
+            line-height: 1.08;
+        }
+
+        .location-copy p {
+            margin-top: 14px;
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        .location-address {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border);
+            color: var(--text);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 17px;
+            line-height: 1.55;
+        }
+
+        .map-link {
+            position: relative;
+            display: block;
+            min-height: 290px;
+            overflow: hidden;
+            background: #d8d4cc;
+        }
+
+        .map-link iframe {
+            width: 100%;
+            height: 290px;
+            display: block;
+            border: 0;
+            pointer-events: none;
+        }
+
+        .map-click-layer {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 18px;
+            background: linear-gradient(to top, rgba(0,0,0,.34), transparent 45%);
+        }
+
+        .map-click-label {
+            padding: 10px 15px;
+            border-radius: 999px;
+            background: rgba(255,255,255,.94);
+            color: #171716;
+            box-shadow: 0 10px 30px rgba(0,0,0,.18);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.1px;
+            text-transform: uppercase;
+        }
+
+        .map-link:hover .map-click-label {
+            background: var(--gold);
+        }
+
+        .location-button {
+            width: calc(100% - 56px);
+            margin: 0 28px 28px;
+            display: block;
+        }
+
+        .qr-card {
+            grid-column: 2;
+            min-width: 0;
+            display: grid;
+            grid-template-columns: 190px minmax(0, 1fr);
+            gap: 28px;
+            align-items: center;
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            background: white;
+            box-shadow: var(--shadow);
+        }
+
+        .qr-box {
+            display: block;
+            padding: 16px;
+            border-radius: 18px;
+            background: var(--cream-light);
+            border: 1px solid var(--border);
+        }
+
+        .qr-box img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            display: block;
+            background: white;
+            border-radius: 12px;
+        }
+
+        .qr-copy h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(28px, 3vw, 40px);
+            font-weight: 400;
+            line-height: 1.08;
+        }
+
+        .qr-copy p {
+            margin-top: 14px;
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .qr-note {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border);
+            color: var(--text);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .qr-button {
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .gravemont-content {
+            display: contents;
+        }
+
+        .gravemont-head {
+            grid-column: 1 / -1;
+            width: 100%;
+            margin-top: 34px;
+            margin-bottom: 0;
+        }
+
+        .gravemont-gallery {
+            grid-column: 1 / -1;
+            width: 100%;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+
+        /* =========================================================
+           POZOSTAŁE OBRAZY — 26 NIEZALEŻNYCH MIEJSC
+        ========================================================= */
+
+        .independent-section {
+            background: #ece6dc;
+        }
+
+        .independent-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 34px 24px;
+        }
+
+        .independent-card {
+            min-width: 0;
+            cursor: pointer;
+            transition: transform .3s ease;
+        }
+
+        .independent-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .independent-image {
+            position: relative;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            border: 1px solid rgba(20,20,18,.10);
+            background: #d8d0c3;
+            box-shadow: 0 16px 42px rgba(0,0,0,.10);
+        }
+
+        .independent-image img {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .5s ease, filter .35s ease;
+        }
+
+        .independent-card:hover .independent-image img {
+            transform: scale(1.035);
+            filter: brightness(.88);
+        }
+
+        .independent-placeholder {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            text-align: center;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,.45), rgba(255,255,255,.08)),
+                #d8d0c3;
+        }
+
+        .independent-placeholder-number {
+            display: block;
+            color: var(--gold);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(42px, 5vw, 72px);
+            line-height: 1;
+        }
+
+        .independent-placeholder-text {
+            display: block;
+            margin-top: 13px;
+            color: #625e57;
+            font-size: 9px;
+            font-weight: 700;
+            line-height: 1.55;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            overflow-wrap: anywhere;
+        }
+
+        .independent-image.has-image .independent-placeholder {
+            display: none;
+        }
+
+        .independent-info {
+            padding-top: 14px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .independent-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 19px;
+            font-weight: 400;
+            line-height: 1.25;
+        }
+
+        .independent-category {
+            margin-top: 5px;
+            color: var(--text-light);
+            font-size: 8px;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+        }
+
+        .independent-number {
+            flex: 0 0 auto;
+            color: var(--gold);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 16px;
+        }
+
+        @media (max-width: 1200px) {
+            .independent-gallery,
+            .gravemont-gallery {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .qr-card {
+                grid-template-columns: 160px minmax(0, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .independent-gallery,
+            .gravemont-gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 30px 18px;
+            }
+
+            .qr-card {
+                grid-template-columns: 180px minmax(0, 1fr);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .independent-gallery,
+            .gravemont-gallery {
+                grid-template-columns: 1fr;
+                gap: 34px;
+            }
+
+            .qr-card {
+                grid-template-columns: 1fr;
+            }
+
+            .qr-box {
+                width: min(100%, 280px);
+                margin: 0 auto;
+            }
+
+            .independent-image {
+                max-height: 620px;
+            }
+        }
+
+
+        /* =========================================================
+           ZAPYTANIE O ZAKUP OBRAZU
+        ========================================================= */
+
+        .purchase-actions {
+            margin-top: 14px;
+        }
+
+        .purchase-availability {
+            margin-bottom: 9px;
+            color: var(--text-light);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.35px;
+            text-transform: uppercase;
+        }
+
+        .buy-button {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--black);
+            border-radius: 999px;
+            background: var(--black);
+            color: white;
+            cursor: pointer;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.25px;
+            text-transform: uppercase;
+            transition: transform .2s ease, background .2s ease;
+        }
+
+        .buy-button:hover {
+            background: #000;
+            transform: translateY(-2px);
+        }
+
+        .purchase-modal-content {
+            width: min(100%, 650px);
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 34px;
+            border-radius: 22px;
+            background: var(--cream-light);
+            box-shadow: 0 30px 90px rgba(0,0,0,.45);
+        }
+
+        .purchase-modal-content h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(30px, 4vw, 44px);
+            font-weight: 400;
+            line-height: 1.1;
+        }
+
+        .purchase-selected {
+            margin-top: 12px;
+            color: var(--gold);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 18px;
+        }
+
+        .purchase-intro {
+            margin-top: 12px;
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        .purchase-form {
+            margin-top: 24px;
+            display: grid;
+            gap: 16px;
+        }
+
+        .purchase-field {
+            display: grid;
+            gap: 7px;
+        }
+
+        .purchase-field label {
+            color: #5e5a53;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .purchase-field input,
+        .purchase-field textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: white;
+            color: var(--text);
+            font: inherit;
+            outline: none;
+        }
+
+        .purchase-field input:focus,
+        .purchase-field textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(182,152,92,.12);
+        }
+
+        .purchase-field textarea {
+            min-height: 135px;
+            resize: vertical;
+        }
+
+        .purchase-submit {
+            margin-top: 4px;
+            width: 100%;
+            border: 0;
+            cursor: pointer;
+        }
+
+        .purchase-note {
+            margin-top: 12px;
+            color: var(--text-light);
+            font-size: 11px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .purchase-modal-content {
+                padding: 24px 18px;
+                border-radius: 16px;
+            }
+        }
+
+        /* =========================================================
+           DODATKOWE SKALOWANIE UI — DESKTOP / TABLET / TELEFON
+        ========================================================= */
+
+        @media (min-width: 1500px) {
+            :root {
+                --page-width: 1440px;
+            }
+
+            .gallery {
+                gap: 38px 30px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            nav {
+                gap: 22px;
+            }
+
+            nav a {
+                font-size: 11px;
+                letter-spacing: 1.25px;
+            }
+
+            .hero {
+                gap: 46px;
+            }
+
+        }
+
+        @media (max-width: 900px) {
+            .menu-button {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 88px;
+                left: 0;
+                right: 0;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 4px;
+                padding: 20px 22px 26px;
+                background: var(--cream-light);
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 20px 40px rgba(0,0,0,.08);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                padding: 8px 4px;
+                font-size: 12px;
+            }
+
+            nav a::after {
+                bottom: 2px;
+            }
+
+
+            .sale-layout {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .location-card,
+            .qr-card {
+                grid-column: 1;
+            }
+
+            .location-card {
+                position: relative;
+                top: auto;
+            }
+
+            .gravemont-head,
+            .gravemont-gallery {
+                grid-column: 1;
+            }
+
+            .gravemont-head {
+                margin-top: 12px;
+            }
+        }
+
+        /* =========================================================
+           RESPONSYWNOŚĆ
+        ========================================================= */
+
+        @media
+        (max-width: 1000px) {
+
+            .hero {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+
+            .gallery {
+
+                grid-template-columns:
+                    repeat(
+                        2,
+                        minmax(0,1fr)
+                    );
+
+            }
+
+
+            .about {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .about-logo-area {
+
+                max-width:
+                    700px;
+
+            }
+
+
+            .contact-box {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+        }
+
+
+
+        @media
+        (max-width: 760px) {
+
+            .navbar {
+
+                min-height:
+                    76px;
+
+                padding:
+                    0 18px;
+
+            }
+
+
+            .header-logo {
+
+                width: 57px;
+
+                height: 57px;
+
+            }
+
+
+            .menu-button {
+
+                display: block;
+
+            }
+
+
+            nav {
+
+                position: absolute;
+
+                top: 76px;
+
+                left: 0;
+
+                right: 0;
+
+                display: none;
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+
+                gap: 28px;
+
+                padding:
+                    32px 25px;
+
+                background:
+                    var(--cream-light);
+
+                border-bottom:
+                    1px solid
+                    var(--border);
+
+                box-shadow:
+                    0 20px 40px
+                    rgba(0,0,0,.08);
+
+            }
+
+
+            nav.active {
+
+                display: flex;
+
+            }
+
+
+            .hero {
+
+                min-height: auto;
+
+                padding:
+                    65px 19px;
+
+            }
+
+
+            .hero h1 {
+
+                letter-spacing:
+                    -2px;
+
+            }
+
+
+
+            .section {
+
+                padding:
+                    80px 19px;
+
+            }
+
+
+            .section-head {
+
+                align-items:
+                    flex-start;
+
+                flex-direction:
+                    column;
+
+            }
+
+
+            .gallery {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .art-image img {
+
+                height: auto;
+
+                max-height:
+                    650px;
+
+            }
+
+
+            .about-logo-area {
+
+                min-height:
+                    430px;
+
+            }
+
+
+            .about-logo-card {
+
+                width:
+                    260px;
+
+            }
+
+
+            .contact-box {
+
+                padding:
+                    80px 19px;
+
+            }
+
+
+            .contact-row {
+
+                flex-direction:
+                    column;
+
+                gap: 5px;
+
+            }
+
+
+            .footer {
+
+                align-items:
+                    flex-start;
+
+                flex-direction:
+                    column;
+
+            }
+
+        }
+
+
+
+        @media
+        (max-width: 460px) {
+
+            .brand-title {
+
+                font-size:
+                    17px;
+
+            }
+
+
+            .brand-subtitle {
+
+                font-size:
+                    7px;
+
+                letter-spacing:
+                    2px;
+
+            }
+
+
+            .header-logo {
+
+                width:
+                    50px;
+
+                height:
+                    50px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    48px;
+
+            }
+
+
+
+            .about-logo-card {
+
+                width:
+                    230px;
+
+            }
+
+        }
+
+
+        @media (max-width: 760px) {
+            .hero-buttons {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .button {
+                width: 100%;
+                min-width: 0;
+            }
+
+
+            .location-copy {
+                padding: 22px;
+            }
+
+            .location-button {
+                width: calc(100% - 44px);
+                margin: 0 22px 22px;
+            }
+
+            .map-link,
+            .map-link iframe {
+                min-height: 250px;
+                height: 250px;
+            }
+
+            .modal {
+                padding: 18px;
+            }
+
+            .modal-close {
+                top: 14px;
+                right: 14px;
+                width: 44px;
+                height: 44px;
+            }
+        }
+
+        @media (max-width: 460px) {
+            .section-title {
+                font-size: clamp(36px, 12vw, 48px);
+            }
+
+            .hero h1 {
+                font-size: clamp(42px, 13vw, 54px);
+                line-height: 1;
+            }
+
+
+            .map-click-label {
+                max-width: 92%;
+                text-align: center;
+                line-height: 1.4;
+            }
+        }
+
+        @media (hover: none) {
+            .art-overlay {
+                opacity: 1;
+                background: transparent;
+            }
+
+            .view-button {
+                width: 54px;
+                height: 54px;
+                background: rgba(0,0,0,.45);
+            }
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+<!--
+    STRUKTURA PLIKÓW:
+    /index.html
+    /obrazy/
+        kaczka
+        biało złoty kwiat.jpg
+        brutalistyczny.jpg
+        ...
+        złoty kwiat.jpg
+
+    Wszystkie lokalne grafiki na stronie są pobierane z folderu „obrazy”
+    znajdującego się w tym samym katalogu co plik index.html.
+-->
+
+
+<!-- =========================================================
+     NAGŁÓWEK
+========================================================= -->
+
+<header>
+
+    <div class="navbar">
+
+
+        <!-- LOGO ZE ZDJĘCIA -->
+
+        <a
+            href="#start"
+            class="brand"
+        >
+
+            <img
+                src="obrazy/kaczka.jpg"
+                data-base="kaczka"
+                data-ext-index="0"
+                alt="Logo BŁ - kaczka w kasku"
+                class="header-logo"
+                onerror="tryImageExtension(this)"
+            >
+
+
+            <div class="brand-text">
+
+                <span class="brand-title">
+                    BŁ
+                </span>
+
+                <span class="brand-subtitle">
+                    Portfolio artystyczne
+                </span>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- MENU -->
+
+        <nav id="navigation">
+
+            <a href="#start">
+                Start
+            </a>
+            <a href="#galeria">
+                Galeria
+            </a>
+
+            <a href="#kup-obrazy">
+                Kup obrazy
+            </a>
+
+            <a href="#omnie">
+                O mnie
+            </a>
+
+            <a href="#kontakt">
+                Kontakt
+            </a>
+
+        </nav>
+
+
+
+        <button
+            class="menu-button"
+            onclick="toggleMenu()"
+            aria-label="Otwórz menu"
+        >
+            ☰
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<main id="start">
+
+    <section class="hero">
+
+
+        <div class="hero-content">
+
+
+            <div class="hero-small">
+
+                Autorskie portfolio
+
+            </div>
+
+
+            <h1>
+
+                Sztuka z
+                <span>charakterem.</span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Autorska kolekcja obrazów,
+                postaci i światów powstających
+                z połączenia wyobraźni,
+                historii oraz własnego stylu.
+
+                Każda praca jest osobnym
+                fragmentem większej opowieści.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+
+                <a
+                    href="#galeria"
+                    class="button button-dark"
+                >
+
+                    Zobacz obrazy
+
+                </a>
+
+
+                <a
+                    href="#kup-obrazy"
+                    class="button button-light"
+                >
+
+                    Kup obrazy
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================================
+     GALERIA — 26 OBRAZÓW
+========================================================= -->
+
+<section
+    id="galeria"
+    class="independent-section"
+>
+
+    <div class="section">
+
+        <div class="section-head">
+
+            <div>
+                <div class="eyebrow">
+                    Niezależna kolekcja
+                </div>
+
+                <h2 class="section-title">
+                    Galeria
+                </h2>
+            </div>
+
+            <p class="section-description">
+                Obrazy są dostępne do kupienia. Aby powiększyć wybrany obraz, kliknij na jego miniaturę.
+            </p>
+
+        </div>
+
+        <div class="independent-gallery">
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Biało złoty kwiat', '38 × 55 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/biało złoty kwiat.jpg"
+                            data-base="biało złoty kwiat"
+                            data-ext-index="0"
+                            alt="Biało złoty kwiat"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">01</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/biało złoty kwiat</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Biało złoty kwiat</h3>
+                            <div class="independent-category">38 × 55 cm</div>
+                        </div>
+                        <div class="independent-number">01</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Biało złoty kwiat', '38 × 55 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Brutalistyczny', '70 × 100 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/brutalistyczny.jpg"
+                            data-base="brutalistyczny"
+                            data-ext-index="0"
+                            alt="Brutalistyczny"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">02</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/brutalistyczny</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Brutalistyczny</h3>
+                            <div class="independent-category">70 × 100 cm</div>
+                        </div>
+                        <div class="independent-number">02</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Brutalistyczny', '70 × 100 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Bryzgająca krew', '40 × 50 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/bryzgająca krew.jpg"
+                            data-base="bryzgająca krew"
+                            data-ext-index="0"
+                            alt="Bryzgająca krew"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">03</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/bryzgająca krew</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Bryzgająca krew</h3>
+                            <div class="independent-category">40 × 50 cm</div>
+                        </div>
+                        <div class="independent-number">03</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Bryzgająca krew', '40 × 50 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Chaos', '70 × 100 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/chaos.jpg"
+                            data-base="chaos"
+                            data-ext-index="0"
+                            alt="Chaos"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">04</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/chaos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Chaos</h3>
+                            <div class="independent-category">70 × 100 cm</div>
+                        </div>
+                        <div class="independent-number">04</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Chaos', '70 × 100 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Wiatr', '100 × 100 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/wiatr.jpg"
+                            data-base="wiatr"
+                            data-ext-index="0"
+                            alt="Wiatr"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">05</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/wiatr</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Wiatr</h3>
+                            <div class="independent-category">100 × 100 cm</div>
+                        </div>
+                        <div class="independent-number">05</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Wiatr', '100 × 100 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Koło natury', '38 × 55 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/koło natury.jpg"
+                            data-base="koło natury"
+                            data-ext-index="0"
+                            alt="Koło natury"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">06</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/koło natury</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Koło natury</h3>
+                            <div class="independent-category">38 × 55 cm</div>
+                        </div>
+                        <div class="independent-number">06</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Koło natury', '38 × 55 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Deszcze abstrakcji', '60 × 80 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/deszcze abstrakcji.jpg"
+                            data-base="deszcze abstrakcji"
+                            data-ext-index="0"
+                            alt="Deszcze abstrakcji"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">07</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/deszcze abstrakcji</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Deszcze abstrakcji</h3>
+                            <div class="independent-category">60 × 80 cm</div>
+                        </div>
+                        <div class="independent-number">07</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Deszcze abstrakcji', '60 × 80 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Dialekt', '40 × 50 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/dialekt.jpg"
+                            data-base="dialekt"
+                            data-ext-index="0"
+                            alt="Dialekt"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">08</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/dialekt</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Dialekt</h3>
+                            <div class="independent-category">40 × 50 cm</div>
+                        </div>
+                        <div class="independent-number">08</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Dialekt', '40 × 50 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Głazy', '40 × 50 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/głazy.jpg"
+                            data-base="głazy"
+                            data-ext-index="0"
+                            alt="Głazy"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">09</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/głazy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Głazy</h3>
+                            <div class="independent-category">40 × 50 cm</div>
+                        </div>
+                        <div class="independent-number">09</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Głazy', '40 × 50 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Jaskinia', '40 × 50 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/jaskinia.jpg"
+                            data-base="jaskinia"
+                            data-ext-index="0"
+                            alt="Jaskinia"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">10</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/jaskinia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Jaskinia</h3>
+                            <div class="independent-category">40 × 50 cm</div>
+                        </div>
+                        <div class="independent-number">10</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Jaskinia', '40 × 50 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Stalagnaty', '55 × 75 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/stalagnaty.jpg"
+                            data-base="stalagnaty"
+                            data-ext-index="0"
+                            alt="Stalagnaty"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">11</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/stalagnaty</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Stalagnaty</h3>
+                            <div class="independent-category">55 × 75 cm</div>
+                        </div>
+                        <div class="independent-number">11</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Stalagnaty', '55 × 75 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Igła', '40 × 50 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/igła.jpg"
+                            data-base="igła"
+                            data-ext-index="0"
+                            alt="Igła"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">12</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/igła</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Igła</h3>
+                            <div class="independent-category">40 × 50 cm</div>
+                        </div>
+                        <div class="independent-number">12</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Igła', '40 × 50 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Dusza', '100 × 100 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/dusza.jpg"
+                            data-base="dusza"
+                            data-ext-index="0"
+                            alt="Dusza"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">13</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/dusza</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Dusza</h3>
+                            <div class="independent-category">100 × 100 cm</div>
+                        </div>
+                        <div class="independent-number">13</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Dusza', '100 × 100 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Kosmos', '70 × 100 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/kosmos.jpg"
+                            data-base="kosmos"
+                            data-ext-index="0"
+                            alt="Kosmos"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">14</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/kosmos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Kosmos</h3>
+                            <div class="independent-category">70 × 100 cm</div>
+                        </div>
+                        <div class="independent-number">14</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Kosmos', '70 × 100 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Morze', '70 × 100 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/morze.jpg"
+                            data-base="morze"
+                            data-ext-index="0"
+                            alt="Morze"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">15</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/morze</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Morze</h3>
+                            <div class="independent-category">70 × 100 cm</div>
+                        </div>
+                        <div class="independent-number">15</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Morze', '70 × 100 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Paranoja', '50 × 120 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/paranoja.jpg"
+                            data-base="paranoja"
+                            data-ext-index="0"
+                            alt="Paranoja"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">16</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/paranoja</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Paranoja</h3>
+                            <div class="independent-category">50 × 120 cm</div>
+                        </div>
+                        <div class="independent-number">16</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Paranoja', '50 × 120 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Kwiat złocisty', '40 × 50 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/kwiat złocisty.jpg"
+                            data-base="kwiat złocisty"
+                            data-ext-index="0"
+                            alt="Kwiat złocisty"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">17</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/kwiat złocisty</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Kwiat złocisty</h3>
+                            <div class="independent-category">40 × 50 cm</div>
+                        </div>
+                        <div class="independent-number">17</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Kwiat złocisty', '40 × 50 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Rzeczywistość', '70 × 100 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/rzeczywistość.jpg"
+                            data-base="rzeczywistość"
+                            data-ext-index="0"
+                            alt="Rzeczywistość"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">18</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/rzeczywistość</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Rzeczywistość</h3>
+                            <div class="independent-category">70 × 100 cm</div>
+                        </div>
+                        <div class="independent-number">18</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Rzeczywistość', '70 × 100 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Smok', '100 × 120 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/smok.jpg"
+                            data-base="smok"
+                            data-ext-index="0"
+                            alt="Smok"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">19</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/smok</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Smok</h3>
+                            <div class="independent-category">100 × 120 cm</div>
+                        </div>
+                        <div class="independent-number">19</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Smok', '100 × 120 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Smugi', '70 × 100 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/smugi.jpg"
+                            data-base="smugi"
+                            data-ext-index="0"
+                            alt="Smugi"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">20</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/smugi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Smugi</h3>
+                            <div class="independent-category">70 × 100 cm</div>
+                        </div>
+                        <div class="independent-number">20</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Smugi', '70 × 100 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Spotkanie', '70 × 100 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/spotkanie.jpg"
+                            data-base="spotkanie"
+                            data-ext-index="0"
+                            alt="Spotkanie"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">21</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/spotkanie</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Spotkanie</h3>
+                            <div class="independent-category">70 × 100 cm</div>
+                        </div>
+                        <div class="independent-number">21</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Spotkanie', '70 × 100 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Tafla jeziora', '55 × 75 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/tafla jeziora.jpg"
+                            data-base="tafla jeziora"
+                            data-ext-index="0"
+                            alt="Tafla jeziora"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">22</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/tafla jeziora</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Tafla jeziora</h3>
+                            <div class="independent-category">55 × 75 cm</div>
+                        </div>
+                        <div class="independent-number">22</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Tafla jeziora', '55 × 75 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Uwięziony', '37 × 55 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/uwięziony.jpg"
+                            data-base="uwięziony"
+                            data-ext-index="0"
+                            alt="Uwięziony"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">23</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/uwięziony</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Uwięziony</h3>
+                            <div class="independent-category">37 × 55 cm</div>
+                        </div>
+                        <div class="independent-number">23</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Uwięziony', '37 × 55 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Złota czerwień', '55 × 75 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/złota czerwień.jpg"
+                            data-base="złota czerwień"
+                            data-ext-index="0"
+                            alt="Złota czerwień"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">24</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/złota czerwień</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Złota czerwień</h3>
+                            <div class="independent-category">55 × 75 cm</div>
+                        </div>
+                        <div class="independent-number">24</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Złota czerwień', '55 × 75 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Złote kable', '55 × 75 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/złote kable.jpg"
+                            data-base="złote kable"
+                            data-ext-index="0"
+                            alt="Złote kable"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">25</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/złote kable</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Złote kable</h3>
+                            <div class="independent-category">55 × 75 cm</div>
+                        </div>
+                        <div class="independent-number">25</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Złote kable', '55 × 75 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+                <article class="independent-card" onclick="openIndependentImage(this, 'Złoty kwiat', '40 × 50 cm')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/złoty kwiat.jpg"
+                            data-base="złoty kwiat"
+                            data-ext-index="0"
+                            alt="Złoty kwiat"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">26</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/złoty kwiat</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Złoty kwiat</h3>
+                            <div class="independent-category">40 × 50 cm</div>
+                        </div>
+                        <div class="independent-number">26</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Złoty kwiat', '40 × 50 cm')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GRAVEMONT HOTTEL — OBRAZY DOSTĘPNE DO KUPIENIA
+========================================================= -->
+
+<section
+    id="kup-obrazy"
+    class="sale-section"
+>
+
+    <div class="section">
+
+        <div class="section-head">
+
+            <div>
+                <div class="eyebrow">
+                    Gravemont Hottel
+                </div>
+
+                <h2 class="section-title">
+                    Obrazy dostępne do kupienia
+                </h2>
+            </div>
+
+            <p class="section-description">
+                Obrazy ze świata Gravemont Hottel można zobaczyć
+                i kupić stacjonarnie w Garaż Pizza&amp;Bar&amp;Art w Jaworznie.
+                Kliknij mapę, aby otworzyć lokalizację w Google Maps.
+            </p>
+
+        </div>
+
+        <div class="sale-layout">
+
+            <aside class="location-card">
+
+                <div class="location-copy">
+                    <div class="eyebrow">
+                        Gdzie kupić?
+                    </div>
+
+                    <h3>
+                        Garaż Pizza&amp;Bar&amp;Art
+                    </h3>
+
+                    <p>
+                        Tutaj możesz zobaczyć wybrane obrazy Gravemont Hottel na żywo
+                        i sprawdzić ich dostępność.
+                    </p>
+
+                    <div class="location-address">
+                        ul. Juliusza Słowackiego 2/2<br>
+                        43-600 Jaworzno
+                    </div>
+                </div>
+
+                <div class="map-link">
+                    <iframe
+                        src="https://www.google.com/maps?q=50.2038151,19.2758146&z=17&output=embed"
+                        title="Mapa do Garaż Pizza&Bar&Art w Jaworznie"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        tabindex="-1"
+                    ></iframe>
+
+                    <a
+                        class="map-click-layer"
+                        href="https://maps.app.goo.gl/EctnERoGswwLXYnC9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Otwórz Garaż Pizza&Bar&Art w Google Maps"
+                    >
+                        <span class="map-click-label">
+                            Kliknij, aby otworzyć Google Maps
+                        </span>
+                    </a>
+                </div>
+
+                <a
+                    href="https://maps.app.goo.gl/EctnERoGswwLXYnC9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-dark location-button"
+                >
+                    Pokaż trasę w Google Maps
+                </a>
+
+            </aside>
+
+            <div class="gravemont-content">
+
+                <div class="qr-card">
+                    <a
+                        id="gukrQrLink"
+                        class="qr-box"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Otwórz stronę G.U.K.R."
+                    >
+                        <img
+                            id="gukrQrImage"
+                            src="data:image/png;base64,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"
+                            alt="Kod QR do strony G.U.K.R."
+                        >
+                    </a>
+
+                    <div class="qr-copy">
+                        <div class="eyebrow">
+                            Kod QR
+                        </div>
+
+                        <h3>
+                            G.U.K.R. — wejście do projektu
+                        </h3>
+
+                        <p>
+                            Zeskanuj kod QR lub kliknij, aby przejść na stronę G.U.K.R.,
+                            gdzie użytkownik może zgłębić projekt książki,
+                            bohaterów i cały świat Gravemont Hottel.
+                        </p>
+
+                        <div class="qr-note">
+                            Uwaga: strona może ładować się trochę dłużej — w końcu pochodzi ze świata fikcji.
+                        </div>
+
+                        <a
+                            id="gukrButtonLink"
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-dark qr-button"
+                        >
+                            Otwórz stronę G.U.K.R.
+                        </a>
+                    </div>
+                </div>
+
+                <div class="section-head gravemont-head">
+                    <div>
+                        <div class="eyebrow">
+                            Świat książki
+                        </div>
+
+                        <h3 class="section-title">
+                            Bohaterowie Gravemont Hottel
+                        </h3>
+                    </div>
+
+                    <p class="section-description">
+                        Poniżej znajduje się 14 obrazów związanych z uniwersum Gravemont Hottel.
+                        Zdjęcia są pobierane bezpośrednio z folderu „obrazy” po tytułach plików.
+                    </p>
+                </div>
+
+                <div class="independent-gallery gravemont-gallery">
+                <article class="independent-card" onclick="openIndependentImage(this, 'michał', 'Bohater świata Gravemont Hottel')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/michał.jpg"
+                            data-base="michał"
+                            data-ext-index="0"
+                            alt="Michał"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">01</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/michał</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Michał</h3>
+                            <div class="independent-category">Świat Gravemont Hottel</div>
+                        </div>
+                        <div class="independent-number">01</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Michał', 'Obraz z kolekcji Gravemont Hottel')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+                <article class="independent-card" onclick="openIndependentImage(this, 'Doktor Żeźnia', 'Bohater świata Gravemont Hottel')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/doktor żeźnia.jpg"
+                            data-base="doktor żeźnia"
+                            data-ext-index="0"
+                            alt="Doktor Żeźnia"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">02</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/doktor żeźnia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Doktor Żeźnia</h3>
+                            <div class="independent-category">Świat Gravemont Hottel</div>
+                        </div>
+                        <div class="independent-number">02</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Doktor Żeźnia', 'Obraz z kolekcji Gravemont Hottel')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+                <article class="independent-card" onclick="openIndependentImage(this, 'Chrono', 'Bohater świata Gravemont Hottel')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/chrono.jpg"
+                            data-base="chrono"
+                            data-ext-index="0"
+                            alt="Chrono"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">03</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/chrono</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Chrono</h3>
+                            <div class="independent-category">Świat Gravemont Hottel</div>
+                        </div>
+                        <div class="independent-number">03</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Chrono', 'Obraz z kolekcji Gravemont Hottel')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+                <article class="independent-card" onclick="openIndependentImage(this, 'Grażyna', 'Bohater świata Gravemont Hottel')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/grażyna.jpg"
+                            data-base="grażyna"
+                            data-ext-index="0"
+                            alt="Grażyna"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">04</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/grażyna</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Grażyna</h3>
+                            <div class="independent-category">Świat Gravemont Hottel</div>
+                        </div>
+                        <div class="independent-number">04</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Grażyna', 'Obraz z kolekcji Gravemont Hottel')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+                <article class="independent-card" onclick="openIndependentImage(this, 'Betonowy Pielgrzym', 'Bohater świata Gravemont Hottel')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/betonowy pielgrzym.jpg"
+                            data-base="betonowy pielgrzym"
+                            data-ext-index="0"
+                            alt="Betonowy Pielgrzym"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">05</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/betonowy pielgrzym</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Betonowy Pielgrzym</h3>
+                            <div class="independent-category">Świat Gravemont Hottel</div>
+                        </div>
+                        <div class="independent-number">05</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Betonowy Pielgrzym', 'Obraz z kolekcji Gravemont Hottel')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+                <article class="independent-card" onclick="openIndependentImage(this, 'Doktor Ortega', 'Bohater świata Gravemont Hottel')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/doktor ortega.jpg"
+                            data-base="doktor ortega"
+                            data-ext-index="0"
+                            alt="Doktor Ortega"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">06</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/doktor ortega</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Doktor Ortega</h3>
+                            <div class="independent-category">Świat Gravemont Hottel</div>
+                        </div>
+                        <div class="independent-number">06</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Doktor Ortega', 'Obraz z kolekcji Gravemont Hottel')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+                <article class="independent-card" onclick="openIndependentImage(this, 'Doktor Mruczek', 'Bohater świata Gravemont Hottel')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/doktor mruczek.jpg"
+                            data-base="doktor mruczek"
+                            data-ext-index="0"
+                            alt="Doktor Mruczek"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">07</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/doktor mruczek</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Doktor Mruczek</h3>
+                            <div class="independent-category">Świat Gravemont Hottel</div>
+                        </div>
+                        <div class="independent-number">07</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Doktor Mruczek', 'Obraz z kolekcji Gravemont Hottel')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+                <article class="independent-card" onclick="openIndependentImage(this, 'Doktor Voss', 'Bohater świata Gravemont Hottel')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/doktor voss.jpg"
+                            data-base="doktor voss"
+                            data-ext-index="0"
+                            alt="Doktor Voss"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">08</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/doktor voss</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Doktor Voss</h3>
+                            <div class="independent-category">Świat Gravemont Hottel</div>
+                        </div>
+                        <div class="independent-number">08</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Doktor Voss', 'Obraz z kolekcji Gravemont Hottel')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+                <article class="independent-card" onclick="openIndependentImage(this, 'Hans', 'Bohater świata Gravemont Hottel')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/hans.jpg"
+                            data-base="hans"
+                            data-ext-index="0"
+                            alt="Hans"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">09</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/hans</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Hans</h3>
+                            <div class="independent-category">Świat Gravemont Hottel</div>
+                        </div>
+                        <div class="independent-number">09</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Hans', 'Obraz z kolekcji Gravemont Hottel')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+                <article class="independent-card" onclick="openIndependentImage(this, 'Kierownik', 'Bohater świata Gravemont Hottel')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/kierownik.jpg"
+                            data-base="kierownik"
+                            data-ext-index="0"
+                            alt="Kierownik"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">10</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/kierownik</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Kierownik</h3>
+                            <div class="independent-category">Świat Gravemont Hottel</div>
+                        </div>
+                        <div class="independent-number">10</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Kierownik', 'Obraz z kolekcji Gravemont Hottel')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+                <article class="independent-card" onclick="openIndependentImage(this, 'Mietek', 'Bohater świata Gravemont Hottel')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/mietek.jpg"
+                            data-base="mietek"
+                            data-ext-index="0"
+                            alt="Mietek"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">11</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/mietek</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Mietek</h3>
+                            <div class="independent-category">Świat Gravemont Hottel</div>
+                        </div>
+                        <div class="independent-number">11</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Mietek', 'Obraz z kolekcji Gravemont Hottel')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+                <article class="independent-card" onclick="openIndependentImage(this, 'Stasiek', 'Bohater świata Gravemont Hottel')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/stasiek.jpg"
+                            data-base="stasiek"
+                            data-ext-index="0"
+                            alt="Stasiek"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">12</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/stasiek</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Stasiek</h3>
+                            <div class="independent-category">Świat Gravemont Hottel</div>
+                        </div>
+                        <div class="independent-number">12</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Stasiek', 'Obraz z kolekcji Gravemont Hottel')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+                <article class="independent-card" onclick="openIndependentImage(this, 'niedźwiedź wojtek', 'Bohater świata Gravemont Hottel')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/niedźwiedź wojtek.jpg"
+                            data-base="niedźwiedź wojtek"
+                            data-ext-index="0"
+                            alt="niedźwiedź wojtek"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">13</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/niedźwiedź wojtek</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">niedźwiedź wojtek</h3>
+                            <div class="independent-category">Świat Gravemont Hottel</div>
+                        </div>
+                        <div class="independent-number">13</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'niedźwiedź wojtek', 'Obraz z kolekcji Gravemont Hottel')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+                <article class="independent-card" onclick="openIndependentImage(this, 'Polonez Intelstellar', 'Bohater świata Gravemont Hottel')">
+                    <div class="independent-image">
+                        <img
+                            src="obrazy/polonez intelstellar.jpg"
+                            data-base="polonez intelstellar"
+                            data-ext-index="0"
+                            alt="Polonez Intelstellar"
+                            loading="lazy"
+                            onload="this.parentElement.classList.add('has-image')"
+                            onerror="tryImageExtension(this)"
+                        >
+                        <div class="independent-placeholder">
+                            <div>
+                                <span class="independent-placeholder-number">14</span>
+                                <span class="independent-placeholder-text">Plik: obrazy/polonez intelstellar</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="independent-info">
+                        <div>
+                            <h3 class="independent-title">Polonez Intelstellar</h3>
+                            <div class="independent-category">Świat Gravemont Hottel</div>
+                        </div>
+                        <div class="independent-number">14</div>
+                    </div>
+                
+                    <div class="purchase-actions" onclick="event.stopPropagation()">
+                        <div class="purchase-availability">Cena i dostępność — zapytaj</div>
+                        <button
+                            type="button"
+                            class="buy-button"
+                            onclick="openPurchaseModal(event, 'Polonez Intelstellar', 'Obraz z kolekcji Gravemont Hottel')"
+                        >
+                            Zapytaj o zakup
+                        </button>
+                    </div>
+                </article>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     O MNIE
+========================================================= -->
+
+<section id="omnie">
+
+
+    <div class="section about">
+
+
+        <!-- LOGO ZE ZDJĘCIA -->
+
+        <div class="about-logo-area">
+
+
+            <div class="about-logo-card">
+
+                <img
+                    src="obrazy/kaczka.jpg"
+                    data-base="kaczka"
+                    data-ext-index="0"
+                    alt="Logo BŁ z kaczką w kasku"
+                    class="about-logo"
+                    onerror="tryImageExtension(this)"
+                >
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="about-text">
+
+
+            <div class="eyebrow">
+
+                O autorze
+
+            </div>
+
+
+            <h2>
+
+                Nie tworzę tylko obrazów.
+                Tworzę
+                <em>historie.</em>
+
+            </h2>
+
+
+            <p>
+
+                Malarstwo jest dla mnie sposobem
+                przenoszenia pomysłów,
+                postaci i całych światów
+                z wyobraźni do rzeczywistości.
+
+            </p>
+
+
+            <p>
+
+                Każda praca zaczyna się od pomysłu,
+                charakteru lub historii,
+                a następnie stopniowo
+                przybiera swoją fizyczną formę.
+
+            </p>
+
+
+            <p>
+
+                Kaczka w kasku budowlanym
+                jest moim znakiem rozpoznawczym.
+                Łączy charakter moich prac
+                z odrobiną dystansu
+                i własnego poczucia humoru.
+
+            </p>
+
+
+            <div class="signature">
+
+                BŁ
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     CYTAT
+========================================================= -->
+
+<section class="quote-section">
+
+
+    <div class="quote">
+
+        „Najciekawsze światy powstają tam,
+        gdzie <span>wyobraźnia przestaje
+        pytać o pozwolenie.</span>”
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     KONTAKT
+========================================================= -->
+
+<section
+    id="kontakt"
+    class="contact-section"
+>
+
+
+    <div class="contact-box">
+
+
+        <div>
+
+
+            <div class="eyebrow">
+
+                Kontakt
+
+            </div>
+
+
+            <h2 class="contact-title">
+
+                Porozmawiajmy
+                o <span>sztuce.</span>
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="contact-info">
+
+
+            <div class="contact-row">
+
+                <div class="contact-label">
+
+                    E-mail
+
+                </div>
+
+
+                <div class="contact-value">
+
+                    <a href="mailto:bartoszlopacinski0@gmail.com">bartoszlopacinski0@gmail.com</a>
+
+                </div>
+
+            </div>
+            <div class="contact-row">
+
+                <div class="contact-label">
+
+                    TikTok
+
+                </div>
+
+
+                <div class="contact-value">
+
+                    <a
+                        href="https://www.tiktok.com/@gravemont_hottel?_r=1&_t=ZN-99fiazVG690"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        @gravemont_hottel
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="contact-row">
+
+                <div class="contact-label">
+
+                    Lokalizacja
+
+                </div>
+
+
+                <div class="contact-value">
+
+                    Polska
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     STOPKA
+========================================================= -->
+
+<footer>
+
+
+    <div class="footer">
+
+
+        <div class="footer-brand">
+
+
+            <img
+                src="obrazy/kaczka.jpg"
+                data-base="kaczka"
+                data-ext-index="0"
+                alt="Logo BŁ"
+                class="footer-logo"
+                onerror="tryImageExtension(this)"
+            >
+
+
+            <div class="footer-title">
+
+                BŁ — Portfolio
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="copyright">
+
+            ©
+            <span id="year"></span>
+            Wszystkie prawa zastrzeżone
+
+        </div>
+
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =========================================================
+     PODGLĄD OBRAZU
+========================================================= -->
+
+<div
+    class="modal"
+    id="imageModal"
+    onclick="closeModalBackground(event)"
+>
+
+
+    <button
+        class="modal-close"
+        onclick="closeModal()"
+        aria-label="Zamknij"
+    >
+
+        ×
+
+    </button>
+
+
+
+    <div class="modal-content">
+
+
+        <img
+            src=""
+            alt=""
+            id="modalImage"
+            class="modal-image"
+        >
+
+
+        <div class="modal-caption">
+
+
+            <h3 id="modalTitle">
+
+            </h3>
+
+
+            <p id="modalCategory">
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     FORMULARZ ZAPYTANIA O ZAKUP
+========================================================= -->
+
+<div
+    class="modal"
+    id="purchaseModal"
+    onclick="closePurchaseModalBackground(event)"
+>
+    <button
+        class="modal-close"
+        onclick="closePurchaseModal()"
+        aria-label="Zamknij formularz"
+    >
+        ×
+    </button>
+
+    <div class="purchase-modal-content">
+        <div class="eyebrow">Zapytanie o zakup</div>
+
+        <h3>Interesuje Cię ten obraz?</h3>
+
+        <div class="purchase-selected" id="purchaseSelected"></div>
+
+        <p class="purchase-intro">
+            Wyślij zapytanie o cenę i dostępność. Wiadomość trafi bezpośrednio
+            na adres autora portfolio.
+        </p>
+
+        <form
+            class="purchase-form"
+            id="purchaseForm"
+            action="https://formsubmit.co/bartoszlopacinski0@gmail.com"
+            method="POST"
+        >
+            <input type="hidden" name="Obraz" id="purchaseArtwork" value="">
+            <input type="hidden" name="Format" id="purchaseSize" value="">
+            <input type="hidden" name="_subject" id="purchaseSubject" value="Zapytanie o zakup obrazu">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none">
+
+            <div class="purchase-field">
+                <label for="buyerName">Imię i nazwisko</label>
+                <input
+                    id="buyerName"
+                    name="Imię i nazwisko"
+                    type="text"
+                    autocomplete="name"
+                    required
+                >
+            </div>
+
+            <div class="purchase-field">
+                <label for="buyerEmail">E-mail</label>
+                <input
+                    id="buyerEmail"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <div class="purchase-field">
+                <label for="buyerPhone">Telefon — opcjonalnie</label>
+                <input
+                    id="buyerPhone"
+                    name="Telefon"
+                    type="tel"
+                    autocomplete="tel"
+                >
+            </div>
+
+            <div class="purchase-field">
+                <label for="buyerMessage">Wiadomość</label>
+                <textarea
+                    id="buyerMessage"
+                    name="Wiadomość"
+                    required
+                ></textarea>
+            </div>
+
+            <button
+                type="submit"
+                class="button button-dark purchase-submit"
+            >
+                Wyślij zapytanie
+            </button>
+
+            <p class="purchase-note">
+                Wysłanie formularza nie oznacza zakupu ani rezerwacji obrazu.
+                Otrzymasz odpowiedź dotyczącą ceny i dostępności.
+            </p>
+        </form>
+    </div>
+</div>
+
+
+<script>
+
+
+    /* =========================================================
+       MENU MOBILNE
+    ========================================================= */
+
+    function toggleMenu() {
+
+        const navigation =
+            document.getElementById(
+                "navigation"
+            );
+
+        navigation
+            .classList
+            .toggle("active");
+
+    }
+
+
+
+    document
+        .querySelectorAll(
+            "nav a"
+        )
+        .forEach(link => {
+
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    document
+                        .getElementById(
+                            "navigation"
+                        )
+                        .classList
+                        .remove(
+                            "active"
+                        );
+
+                }
+            );
+
+
+        });
+
+
+
+    /* =========================================================
+       FILTRY GALERII
+    ========================================================= */
+
+    function filterGallery(
+        category,
+        button
+    ) {
+
+
+        const cards =
+            document.querySelectorAll(
+                ".art-card"
+            );
+
+
+        const buttons =
+            document.querySelectorAll(
+                ".filter-btn"
+            );
+
+
+        buttons.forEach(
+            btn => {
+
+                btn
+                    .classList
+                    .remove(
+                        "active"
+                    );
+
+            }
+        );
+
+
+        button
+            .classList
+            .add(
+                "active"
+            );
+
+
+        cards.forEach(
+            card => {
+
+
+                const
+                    cardCategory =
+                    card.dataset.category;
+
+
+                if (
+                    category === "all"
+                    ||
+                    cardCategory ===
+                    category
+                ) {
+
+                    card.style.display =
+                        "block";
+
+                }
+
+                else {
+
+                    card.style.display =
+                        "none";
+
+                }
+
+
+            }
+        );
+
+
+    }
+
+
+
+    /* =========================================================
+       OTWIERANIE OBRAZU
+    ========================================================= */
+
+    function openModal(
+        image,
+        title,
+        category
+    ) {
+
+
+        const modal =
+            document.getElementById(
+                "imageModal"
+            );
+
+
+        const modalImage =
+            document.getElementById(
+                "modalImage"
+            );
+
+
+        modalImage.src =
+            image;
+
+
+        modalImage.alt =
+            title;
+
+
+        document
+            .getElementById(
+                "modalTitle"
+            )
+            .textContent =
+            title;
+
+
+        document
+            .getElementById(
+                "modalCategory"
+            )
+            .textContent =
+            category;
+
+
+        modal
+            .classList
+            .add(
+                "active"
+            );
+
+
+        document.body.style.overflow =
+            "hidden";
+
+
+    }
+
+
+
+    /* =========================================================
+       ZAMYKANIE
+    ========================================================= */
+
+    function closeModal() {
+
+
+        document
+            .getElementById(
+                "imageModal"
+            )
+            .classList
+            .remove(
+                "active"
+            );
+
+
+        document.body.style.overflow =
+            "";
+
+
+    }
+
+
+
+    function closeModalBackground(
+        event
+    ) {
+
+
+        if (
+            event.target.id ===
+            "imageModal"
+        ) {
+
+            closeModal();
+
+        }
+
+
+    }
+
+
+
+    /* =========================================================
+       ESC
+    ========================================================= */
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+
+            if (
+                event.key ===
+                "Escape"
+            ) {
+
+                closeModal();
+                closePurchaseModal();
+
+            }
+
+
+        }
+    );
+
+
+
+
+    /* =========================================================
+       FORMULARZ ZAPYTANIA O ZAKUP
+    ========================================================= */
+
+    function openPurchaseModal(event, title, size) {
+
+        if (event) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        const modal = document.getElementById("purchaseModal");
+        const selected = document.getElementById("purchaseSelected");
+        const artwork = document.getElementById("purchaseArtwork");
+        const artworkSize = document.getElementById("purchaseSize");
+        const subject = document.getElementById("purchaseSubject");
+        const message = document.getElementById("buyerMessage");
+
+        selected.textContent = title + " — " + size;
+        artwork.value = title;
+        artworkSize.value = size;
+        subject.value = "Zapytanie o zakup obrazu: " + title;
+        message.value =
+            "Dzień dobry,\n\n" +
+            "jestem zainteresowany/a zakupem obrazu „" + title + "” (" + size + ").\n" +
+            "Proszę o informację o cenie i dostępności.\n";
+
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+
+        setTimeout(() => {
+            const nameField = document.getElementById("buyerName");
+            if (nameField) nameField.focus();
+        }, 50);
+    }
+
+    function closePurchaseModal() {
+        const modal = document.getElementById("purchaseModal");
+        if (modal) modal.classList.remove("active");
+
+        if (!document.getElementById("imageModal").classList.contains("active")) {
+            document.body.style.overflow = "";
+        }
+    }
+
+    function closePurchaseModalBackground(event) {
+        if (event.target.id === "purchaseModal") {
+            closePurchaseModal();
+        }
+    }
+
+    const GUKR_URL = "https://qrto.org/RkFaHL";
+
+    function initializeGukrQr() {
+
+        const qrLink = document.getElementById("gukrQrLink");
+        const qrButton = document.getElementById("gukrButtonLink");
+        const qrImage = document.getElementById("gukrQrImage");
+
+        if (qrLink) {
+            qrLink.href = GUKR_URL;
+        }
+
+        if (qrButton) {
+            qrButton.href = GUKR_URL;
+        }
+
+        /* Kod QR jest osadzony bezpośrednio w HTML z przesłanego obrazu. */
+
+    }
+
+    initializeGukrQr();
+
+
+    /* =========================================================
+       GALERIA — ODCZYT OBRAZÓW PO TYTUŁACH
+    ========================================================= */
+
+    function tryImageExtension(image) {
+
+        const extensions = [
+            "jpg", "jpeg", "png", "webp", "avif",
+            "JPG", "JPEG", "PNG", "WEBP", "AVIF"
+        ];
+
+        const base = image.dataset.base;
+        let index = Number(image.dataset.extIndex || 0) + 1;
+
+        if (!base || index >= extensions.length) {
+            image.style.display = "none";
+            return;
+        }
+
+        image.dataset.extIndex = String(index);
+        image.src = encodeURI(
+            "obrazy/" + base + "." + extensions[index]
+        );
+
+    }
+
+
+    function openIndependentImage(card, title, size) {
+
+        const image = card.querySelector(".independent-image img");
+
+        if (
+            image &&
+            image.complete &&
+            image.naturalWidth > 0
+        ) {
+            openModal(
+                image.getAttribute("src"),
+                title,
+                size || "Niezależna kolekcja"
+            );
+        }
+
+    }
+
+
+    /* =========================================================
+       ROK
+    ========================================================= */
+
+    document
+        .getElementById(
+            "year"
+        )
+        .textContent =
+        new Date()
+            .getFullYear();
+
+
+</script>
+
+
+</body>
+
+</html>
