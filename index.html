@@ -2020,6 +2020,20 @@
             transform: translateY(-2px);
         }
 
+        .buy-button:disabled {
+            background: #8a8680;
+            border-color: #8a8680;
+            color: #f1eee8;
+            cursor: not-allowed;
+            opacity: .85;
+            transform: none;
+        }
+
+        .purchase-unavailable {
+            color: #8a2f2f;
+            font-weight: 800;
+        }
+
         .purchase-modal-content {
             width: min(100%, 650px);
             max-height: 90vh;
@@ -4289,13 +4303,15 @@
                     </div>
                 
                     <div class="purchase-actions" onclick="event.stopPropagation()">
-                        <div class="purchase-availability">Dostępność — zapytaj</div>
+                        <div class="purchase-availability purchase-unavailable">Niedostępna</div>
                         <button
                             type="button"
                             class="buy-button"
-                            onclick="openPurchaseModal(event, 'Grażyna', 'Kolekcja Gravemont Hottel')"
+                            disabled
+                            aria-disabled="true"
+                            title="Ten obraz jest obecnie niedostępny"
                         >
-                            Zapytaj o dostępność
+                            Obraz niedostępny
                         </button>
                     </div>
                 </article>
