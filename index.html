@@ -4657,18 +4657,21 @@
         <div class="purchase-selected" id="purchaseSelected"></div>
 
         <p class="purchase-intro">
-            Wypełnij pola poniżej, a po kliknięciu otworzy się gotowa wiadomość e-mail
-            do autora portfolio z uzupełnionym tytułem obrazu i Twoimi danymi.
+            Wypełnij formularz, aby wysłać zapytanie o cenę i dostępność obrazu.
+            Wiadomość zostanie przekazana bezpośrednio do autora portfolio.
         </p>
 
         <form
             class="purchase-form"
             id="purchaseForm"
-            onsubmit="sendPurchaseEmail(event)"
+            action="https://formsubmit.co/d12accef47f236ed097e267f077e58e5"
+            method="POST"
         >
-            <input type="hidden" id="purchaseArtwork" value="">
-            <input type="hidden" id="purchaseSize" value="">
-            <input type="hidden" id="purchaseSubject" value="Zapytanie o zakup obrazu">
+            <input type="hidden" name="Obraz" id="purchaseArtwork" value="">
+            <input type="hidden" name="Format" id="purchaseSize" value="">
+            <input type="hidden" name="_subject" id="purchaseSubject" value="Zapytanie o zakup obrazu">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" style="display:none">
 
             <div class="purchase-field">
                 <label for="buyerName">Imię i nazwisko</label>
@@ -4715,12 +4718,12 @@
                 type="submit"
                 class="button button-dark purchase-submit"
             >
-                Otwórz e-mail z zapytaniem
+                Wyślij zapytanie
             </button>
 
             <p class="purchase-note">
-                Kliknięcie przycisku otworzy Twój program pocztowy z gotową wiadomością.
-                Wysłanie e-maila nie oznacza zakupu ani rezerwacji obrazu.
+                Wysłanie formularza nie oznacza zakupu ani rezerwacji obrazu.
+                Otrzymasz odpowiedź dotyczącą ceny i dostępności.
             </p>
         </form>
     </div>
@@ -5037,54 +5040,6 @@
         if (event.target.id === "purchaseModal") {
             closePurchaseModal();
         }
-    }
-
-    function sendPurchaseEmail(event) {
-
-        event.preventDefault();
-
-        const artwork = document.getElementById("purchaseArtwork").value.trim();
-        const artworkSize = document.getElementById("purchaseSize").value.trim();
-        const buyerName = document.getElementById("buyerName").value.trim();
-        const buyerEmail = document.getElementById("buyerEmail").value.trim();
-        const buyerPhone = document.getElementById("buyerPhone").value.trim();
-        const buyerMessage = document.getElementById("buyerMessage").value.trim();
-
-        const subject = "Zapytanie o zakup obrazu: " + artwork;
-
-        let body =
-            "Dzień dobry,
-
-" +
-            "piszę w sprawie obrazu:
-" +
-            artwork + " — " + artworkSize + "
-
-" +
-            "Dane osoby zainteresowanej:
-" +
-            "Imię i nazwisko: " + buyerName + "
-" +
-            "E-mail: " + buyerEmail + "
-";
-
-        if (buyerPhone) {
-            body += "Telefon: " + buyerPhone + "
-";
-        }
-
-        body += "
-Wiadomość:
-" + buyerMessage + "
-";
-
-        const mailtoUrl =
-            "mailto:bartoszlopacinski0@gmail.com" +
-            "?subject=" + encodeURIComponent(subject) +
-            "&body=" + encodeURIComponent(body);
-
-        window.location.href = mailtoUrl;
-        closePurchaseModal();
     }
 
     const GUKR_URL = "https://qrto.org/RkFaHL";
